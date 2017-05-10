@@ -1,0 +1,149 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html lang="en" class="ie8 no-js" data-ng-app="CurrencyApp"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9 no-js" data-ng-app="CurrencyApp"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" data-ng-app="CurrencyApp">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <title data-ng-bind="site_config.BRAND + ' | ' + $state.current.data.pageTitle"></title>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="{% static "vendors/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static "vendors/simple-line-icons/simple-line-icons.min.css" %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static "vendors/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static "vendors/bootstrap-switch/css/bootstrap-switch.min.css" %}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="{% static "vendors/bootstrap-toastr/toastr.min.css" %}"/>
+    <!-- END GLOBAL MANDATORY STYLES -->
+
+    <!-- BEGIN DYMANICLY LOADED CSS FILES(all plugin and page related styles must be loaded between GLOBAL and THEME css files ) -->
+    <link id="ng_load_plugins_before"/>
+    <!-- END DYMANICLY LOADED CSS FILES -->
+
+    <link href="{% static "vendors/jquery-ui/jquery-ui-1.10.3.custom.min.css" %}" rel="stylesheet"/>
+    <link href="{% static "vendors/metronic/global/css/components-rounded.css" %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static "vendors/metronic/global/css/plugins.css" %}" rel="stylesheet" type="text/css"/>
+    <!-- BEGIN THEME STYLES -->
+    <link href="{% static "vendors/metronic/global/css/components.css" %}" id="style_components" rel="stylesheet" type="text/css"/>
+    <link href="{% static "vendors/metronic/global/css/plugins.css" %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static "vendors/angularjs/plugins/ng-table/ng-table.css" %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static "vendors/angularjs/plugins/chosen/chosen.min.css" %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static "vendors/metronic/admin/layout/css/layout.css" %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static "vendors/metronic/admin/layout/css/themes/" %}{{ THEME }}.css" rel="stylesheet" type="text/css" id="style_color"/>
+    <link href="{% static "apps/currency/common/css/app.css" %}" rel="stylesheet" type="text/css"/>
+    <!-- END THEME STYLES -->
+
+    <link rel="shortcut icon" href="{% static "apps/currency/common/img/favicon.ico" %}"/>
+</head>
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+<body ng-controller="AppController"
+      class="page-header-fixed page-sidebar-closed-hide-logo page-quick-sidebar-over-content page-on-load"
+      ng-class="{'page-container-bg-solid': settings.layout.pageBodySolid, 'page-sidebar-closed': settings.layout.pageSidebarClosed}">
+
+<!-- BEGIN PAGE SPINNER -->
+<div ng-spinner-bar class="page-spinner-bar">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+</div>
+<!-- END PAGE SPINNER -->
+
+<!-- BEGIN HEADER -->
+<div data-ng-include="'{% static "apps/currency/layout/header.html" %}'" data-ng-controller="HeaderController" class="page-header navbar navbar-fixed-top">
+</div>
+<!-- END HEADER -->
+
+<div class="clearfix"> </div>
+<div class="page-container">
+    <div data-ng-include="'{% static "apps/currency/layout/sidebar.html" %}'" data-ng-controller="SidebarController"
+         class="page-sidebar-wrapper">
+    </div>
+
+    <div class="page-content-wrapper">
+        <div class="page-content">
+            <div ui-view class="fade-in-up"> </div>
+        </div>
+    </div>
+</div>
+
+<!-- BEGIN FOOTER -->
+<div data-ng-include="'{% static "apps/currency/layout/footer.html" %}'" data-ng-controller="FooterController"
+     class="page-footer">
+</div>
+<!-- END FOOTER -->
+
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+
+<!-- BEGIN CORE JQUERY PLUGINS -->
+<script src="{% static "vendors/jquery.min.js" %}" type="text/javascript"></script>
+<script src="{% static "vendors/jquery-migrate.min.js" %}" type="text/javascript"></script>
+<script src="{% static "vendors/bootstrap/js/bootstrap.min.js" %}" type="text/javascript"></script>
+<script src="{% static "vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" %}"
+        type="text/javascript"></script>
+<script src="{% static "vendors/jquery-slimscroll/jquery.slimscroll.js" %}"
+        type="text/javascript"></script>
+<script src="{% static "vendors/jquery.blockui.min.js" %}" type="text/javascript"></script>
+<script src="{% static "vendors/jquery.cokie.min.js" %}" type="text/javascript"></script>
+<script src="{% static "vendors/jquery-validation/js/jquery.validate.min.js" %}"
+        type="text/javascript"></script>
+<script src="{% static "vendors/jquery-ui/jquery-ui-1.10.3.custom.min.js" %}"
+        type="text/javascript"></script>
+<script src="{% static "vendors/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js" %}"
+        type="text/javascript"></script>
+<script src="{% static "vendors/bootstrap-switch/js/bootstrap-switch.min.js" %}"
+        type="text/javascript"></script>
+<script src="{% static "vendors/bootstrap-toastr/toastr.min.js" %}"></script>
+<script src="{% static "vendors/sprintf.js" %}"></script>
+<script src="{% static "vendors/moment.min.js" %}"></script>
+<script src="{% static "vendors/bootbox/bootbox.min.js" %}" type="text/javascript"></script>
+<!-- END CORE JQUERY PLUGINS -->
+
+<!-- BEGIN CORE ANGULARJS PLUGINS -->
+<script src="{% static "vendors/angularjs/angular.min.js" %}" type="text/javascript"></script>
+<script src="{% static "vendors/angularjs/angular-cookies.min.js" %}" type="text/javascript"></script>
+<script src="{% static "vendors/angularjs/angular-sanitize.min.js" %}" type="text/javascript"></script>
+<script src="{% static "vendors/angularjs/angular-touch.min.js" %}" type="text/javascript"></script>
+<script src="{% static "vendors/angularjs/plugins/angular-ui-router.min.js" %}"
+        type="text/javascript"></script>
+<script src="{% static "vendors/angularjs/plugins/ocLazyLoad.min.js" %}"
+        type="text/javascript"></script>
+<script src="{% static "vendors/angularjs/plugins/ui-bootstrap-tpls.min.js" %}"
+        type="text/javascript"></script>
+<script src="{% static "vendors/angularjs/plugins/ng-lodash.min.js" %}"
+        type="text/javascript"></script>
+<script src="{% static "vendors/angularjs/plugins/angular-resource.js" %}"
+        type="text/javascript"></script>
+<script src="{% static "vendors/angularjs/plugins/ng-table/ng-table.min.js" %}" type="text/javascript"></script>
+<script src="{% static "vendors/angularjs/plugins/ngBootbox.min.js" %}" type="text/javascript"></script>
+<script src="{% static "vendors/angularjs/plugins/chosen/chosen.jquery.min.js" %}" type="text/javascript"></script>
+<script src="{% static "vendors/angularjs/plugins/chosen/angular-chosen.min.js" %}" type="text/javascript"></script>
+<!-- END CORE ANGULARJS PLUGINS -->
+
+<script src="{% static "vendors/metronic/global/scripts/metronic.js" %}" type="text/javascript"></script>
+<script src="{% static "vendors/metronic/admin/layout/scripts/layout.js" %}" type="text/javascript"></script>
+
+<!-- BEGIN APP -->
+<script src="{% static "apps/currency/common/scripts/global.js" %}" type="text/javascript"></script>
+<script src="{% static "apps/currency/common/scripts/services.js" %}" type="text/javascript"></script>
+<script src="{% static "apps/currency/common/scripts/resources.js" %}" type="text/javascript"></script>
+<script src="{% static "apps/currency/common/scripts/directives.js" %}" type="text/javascript"></script>
+<script>
+angular.module('currency.services')
+    .constant('site_config', Object.freeze({{site_config|safe}}))
+    .constant('current_user', Object.freeze({{current_user|safe}}));
+</script>
+<script src="{% static "apps/currency/app.js" %}" type="text/javascript"></script>
+<!-- END APP -->
+
+</body>
+<!-- END BODY -->
+</html>

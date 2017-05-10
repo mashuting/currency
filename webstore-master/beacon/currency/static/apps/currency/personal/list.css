@@ -1,0 +1,10 @@
+.sale_table {
+}
+.sale_table tbody th {
+    background: #800603;
+    color: white;
+}
+
+.app-modal-window .modal-dialog {
+  width: 580px;
+}

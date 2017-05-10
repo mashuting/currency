@@ -1,0 +1,173 @@
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN CHART PORTLET-->
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-speedometer  font-green-haze"></i>
+                    <span class="caption-subject bold uppercase font-green-haze"> 平台配置参数 </span>
+                    <span class="caption-helper"></span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12">
+                        <div class="dashboard-stat blue-madison">
+                            <div class="visual">
+                                <i class="fa fa-globe"></i>
+                            </div>
+                            <div class="details">
+                                <div class="number">
+                                    {{ ctrl.exchangeRate }}
+                                </div>
+                                <div class="desc">
+                                    兑换率
+                                </div>
+                            </div>
+                            <a href="#" class="more" data-ng-click="ctrl.changeExchangeRateModal(ctrl.exchangeRate)">
+                                调整
+                            </a>
+                            <a href="#" class="more" data-ng-click="ctrl.splitExchangeRateModal(ctrl.exchangeRate)">
+                                拆分
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="dashboard-stat red-pink">
+                            <div class="visual">
+                                <i class="fa fa-database"></i>
+                            </div>
+                            <div class="details">
+                                <div class="number">
+                                    {{ ctrl.systemGiveCouponCount }}
+                                </div>
+                                <div class="desc">
+                                   系统赠送点券数
+                                </div>
+                            </div>
+                            <a href="#" class="more" data-ng-click="ctrl.changeSystemGiveCouponCountModal(ctrl.systemGiveCouponCount)">
+                                调整
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="dashboard-stat green-haze">
+                            <div class="visual">
+                                <i class="fa fa-tasks"></i>
+                            </div>
+                            <div class="details">
+                                <div class="number">
+                                    {{ ctrl.userGiveCouponCount }}
+                                </div>
+                                <div class="desc">
+                                    用户赠送点券数
+                                </div>
+                            </div>
+                            <a href="#" class="more" data-ng-click="ctrl.changeUserGiveCouponCountModal(ctrl.userGiveCouponCount)">
+                                调整
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="dashboard-stat purple-plum">
+                            <div class="visual">
+                                <i class="fa fa-circle-o-notch"></i>
+                            </div>
+                            <div class="details">
+                                <div class="number">
+                                    {{ ctrl.maxExchangeRate }}
+                                </div>
+                                <div class="desc">
+                                    兑换率峰值
+                                </div>
+                            </div>
+                            <a href="#" class="more" data-ng-click="ctrl.changeMaxExchangeRateModal(ctrl.maxExchangeRate)">
+                                调整
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12">
+                        <div class="dashboard-stat red-haze">
+                            <div class="visual">
+                                <i class="fa fa-globe"></i>
+                            </div>
+                            <div class="details">
+                                <div class="number">
+                                    {{ ctrl.sellPresent }}
+                                </div>
+                                <div class="desc">
+                                    出售部分比率
+                                </div>
+                            </div>
+                            <a href="#" class="more" data-ng-click="ctrl.changeSellPresentModal(ctrl.sellPresent)">
+                                调整
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="dashboard-stat green-jungle">
+                            <div class="visual">
+                                <i class="fa fa-database"></i>
+                            </div>
+                            <div class="details">
+                                <div class="number">
+                                    {{ ctrl.exchangeTimes }}
+                                </div>
+                                <div class="desc">
+                                   最大兑换次数
+                                </div>
+                            </div>
+                            <a href="#" class="more" data-ng-click="ctrl.changeExchangeTimesModal(ctrl.exchangeTimes)">
+                                调整
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="dashboard-stat purple-sharp">
+                            <div class="visual">
+                                <i class="fa fa-tasks"></i>
+                            </div>
+                            <div class="details">
+                                <div class="number">
+                                    {{ ctrl.protectTime }}
+                                </div>
+                                <div class="desc">
+                                    点券保护期（秒级）
+                                </div>
+                            </div>
+                            <a href="#" class="more" data-ng-click="ctrl.changeProtectTimeModal(ctrl.protectTime)">
+                                调整
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="dashboard-stat blue-hoki">
+                            <div class="visual">
+                                <i class="fa fa-circle-o-notch"></i>
+                            </div>
+                            <div class="details">
+                                <div class="number">
+                                    0.3
+                                </div>
+                                <div class="desc">
+                                    出售回购比率
+                                </div>
+                            </div>
+                            <a href="#" class="more">
+                                不可调整
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- END CHART PORTLET-->
+    </div>
+</div>

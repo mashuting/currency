@@ -1,0 +1,89 @@
+<div class="col-md-12 portlet box red">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-gift"></i> 出售点券 <span class="step-title"></span>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <form action="#" class="form-horizontal">
+            <div class="form-wizard">
+                <div class="form-body">
+                    <div>
+                        <div class="col-md-12 alert alert-danger">
+                            出售点券数量：{{ saleCtrl.couponNum }}, 出售单价：{{ saleCtrl.couponPrice }}, 个人需回购出售数量的30%， 并缴纳10%的手续费.
+                        </div>
+                        <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group has-success">
+                               <label class="control-label col-md-3">出售数量 <span class="required" aria-required="true">
+                                   * </span>
+                               </label>
+                               <div class="col-md-4">
+                                   <input type="text" class="form-control" data-ng-model="saleCtrl.saleCouponNum" readonly>
+                               </div>
+                           </div>
+                            <div class="form-group has-success">
+                               <label class="control-label col-md-3">出售金币 <span class="required" aria-required="true">
+                                   * </span>
+                               </label>
+                               <div class="col-md-4">
+                                   <input type="text" class="form-control" data-ng-model="saleCtrl.saleCoinCount" readonly>
+                               </div>
+                           </div>
+                            <div class="form-group has-success">
+                               <label class="control-label col-md-3">兑换率 <span class="required" aria-required="true">
+                                   * </span>
+                               </label>
+                               <div class="col-md-4">
+                                   <input type="text" class="form-control" data-ng-model="saleCtrl.couponPrice" readonly>
+                               </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="form-group has-success">
+                               <label class="control-label col-md-3">回购数量 <span class="required" aria-required="true">
+                                   * </span>
+                               </label>
+                               <div class="col-md-4">
+                                   <input type="text" class="form-control" data-ng-model="saleCtrl.buyCouponNum" readonly>
+                               </div>
+                           </div>
+                            <div class="form-group has-success">
+                               <label class="control-label col-md-3">扣除数量 <span class="required" aria-required="true">
+                                   * </span>
+                               </label>
+                               <div class="col-md-4">
+                                   <input type="text" class="form-control" data-ng-model="saleCtrl.factorageCouponNum" readonly>
+                               </div>
+                           </div>
+                            <div class="form-group has-success">
+                               <label class="control-label col-md-3"> 登录密码 <span class="required" aria-required="true">
+                                   * </span>
+                               </label>
+                               <div class="col-md-4">
+                                   <input type="password" class="form-control" data-ng-model="saleCtrl.password">
+                               </div>
+                           </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <div class="row">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6" style="float: right">
+                            <a class="btn grey button-submit" data-ng-click="saleCtrl.cancel()">
+                                取消
+                            </a>
+                            <a class="btn red button-submit" data-ng-click="saleCtrl.submitSale()">
+                                提交
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+

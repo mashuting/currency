@@ -1,0 +1,80 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="note note-danger ng-scope">
+            <h3 style="color: #2C2C2C; font-family: Verdana">
+                欢迎用户：{{ ctrl.user.username }}
+            </h3>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="row note note-warning ng-scope">
+            <div class="col-md-2" align="center">
+                <img src="/static/apps/currency/common/img/ico_user_white.png">
+                <br><br>
+                <p style="color: white; font-size: medium">粉丝信息</p>
+            </div>
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-4 information">
+                        语言
+                        <select id="language" ng-model="ctrl.language" class="select-language"
+                                data-ng-options="language for language in ctrl.languages" >
+                        </select>
+                    </div>
+                    <div class="col-md-4 information">
+                        手机<p>{{ ctrl.user.profile.phone_number }}</p>
+                    </div>
+                    <div class="col-md-4 information">
+                        邮箱<p>{{ ctrl.user.email }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 information">
+                        金币账户总计<p>{{ ctrl.user.profile.total_coin_count }}</p>
+                    </div>
+                    <div class="col-md-4 information">
+                        金币账户余额<p>{{ ctrl.user.profile.residue_coin_count }}</p>
+                    </div>
+                    <div class="col-md-4 information">
+                        会员级别<p>LV.10</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div class="col-md-6">
+        <div class="row note note-warning ng-scope">
+            <div class="col-md-2" align="center">
+                <img src="/static/apps/currency/common/img/ico_multiplayer.png">
+                <br><br>
+                <p style="color: white; font-size: medium">网络信息</p>
+            </div>
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-4 information">
+                        易物点余额<p>{{ ctrl.user.profile.residue_coupon_count }}</p>
+                    </div>
+                    <div class="col-md-4 information">
+                        今日兑换率<p>{{ ctrl.exchangeRate.value }}</p>
+                    </div>
+                    <div class="col-md-4 information">
+                        注册时间<p>{{ ctrl.user.date_joined }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 information">
+                        今天业绩 PV<p>0.0</p>
+                    </div>
+                    <div class="col-md-4 information">
+                        昨天业绩 PV<p>0.0</p>
+                    </div>
+                    <div class="col-md-4 information">
+                        捐款<p>0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

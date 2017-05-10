@@ -1,0 +1,87 @@
+<div class="row row-width">
+    <div class="col-md-12">
+        <div class="note note-danger ng-scope">
+            <p>
+                新增粉丝账号，同时赠送<span class="label label-sm label-danger">{{ createCtrl.userGivenCoupons.value }}</span>点易物点到粉丝账号，平台将赠送<span class="label label-sm label-danger">{{ createCtrl.systemGivenCoupons.value }}</span>点易物点到粉丝账号
+            </p>
+        </div>
+        <!-- BEGIN INSTANCE  -->
+        <div class="portlet">
+            <div class="portlet-title"></div>
+            <div class="portlet-body form row-width">
+                <div class="col-md-8">
+                    <form id="form" role="form">
+                        <div class="form-group">
+                            <label class="control-label" required-field>登录名</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                <i class="fa fa-user"></i>
+                                </span>
+                                <input type="text" class="form-control" id="username" name="username" maxlength="24"
+                                       tooltip="输入不超过三十个字符的字母数字及_-符号" tooltip-placement="top"
+                                       tooltip-trigger="mouseenter" data-ng-model="createCtrl.user.username">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" required-field>密码</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                <i class="fa fa-pied-piper"></i>
+                                </span>
+                                <input id="password1" name="password1" type="password"
+                                       data-ng-model="createCtrl.user.password"
+                                       class="form-control" data-rule-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" required-field>确认密码</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                <i class="fa fa-pied-piper"></i>
+                                </span>
+                                <input id="password2" name="password2" type="password"
+                                       data-ng-model="createCtrl.user.password2"
+                                       class="form-control" data-rule-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" required-field>身份证号</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                <i class="fa fa-openid"></i>
+                                </span>
+                                <input class="form-control" id="id_card" name="id_card"
+                                       data-ng-model="createCtrl.user.profile.id_card">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" required-field>手机</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                <i class="fa fa-phone"></i>
+                                </span>
+                                <input class="form-control" id="phone_number" name="phone_number"
+                                       data-ng-model="createCtrl.user.profile.phone_number">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" required-field>邮箱</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                <i class="fa icon-envelope-open"></i>
+                                </span>
+                                <input class="form-control" type="text" id="email" name="email"
+                                       data-ng-model="createCtrl.user.email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn blue-hoki btn-block" data-ng-click="createCtrl.submit()"> 创建 </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- END INSTANCE  -->
+    </div>
+</div>
+

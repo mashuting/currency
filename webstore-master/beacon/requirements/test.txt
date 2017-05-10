@@ -1,0 +1,4 @@
+-r base.txt
+pytest>=3.0.3
+pytest-django>=3.0.0
+pytest-mock>=1.4.0

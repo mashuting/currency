@@ -1,0 +1,187 @@
+<div class="row">
+    <div class="profile-content">
+        <div class="row">
+                    <div class="col-md-4">
+                        <!-- BEGIN PORTLET -->
+                        <div class="portlet light ">
+                            <div class="portlet-title">
+                                <div class="caption caption-md">
+                                    <i class="icon-bar-chart theme-font hide"></i>
+                                    <span class="caption-subject font-blue-madison bold uppercase">兑换率</span>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div class="row number-stats margin-bottom-30">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <div class="stat-left">
+                                           <div class="stat-chart">
+                                           <div id="sparkline_bar"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
+                                           </div>
+                                           <div class="stat-number">
+                                           <div class="title">
+                                           今日最高
+                                           </div>
+                                           <div class="number">
+                                           {{ ctrl.exchangeRate }}
+                                           </div>
+                                           </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <div class="stat-right">
+                                            <div class="stat-chart">
+                                           <!-- do not line break "sparkline_bar" div. sparkline chart has an issue when the container div has line break -->
+                                                <div id="sparkline_bar2"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
+                                            </div>
+                                            <div class="stat-number">
+                                                <div class="title">
+                                                    今日最低
+                                                </div>
+                                                <div class="number">
+                                                    {{ ctrl.exchangeRate }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-scrollable table-scrollable-borderless">
+                                    <table class="table table-hover table-light">
+                                        <thead>
+                                           <tr class="uppercase">
+                                           <th>
+                                           上次市价
+                                           </th>
+                                           <th>
+                                           今天市价
+                                           </th>
+                                           <th>
+                                           最高价
+                                           </th>
+                                           <th>
+                                           最低价
+                                           </th>
+                                           <th>
+                                           现价
+                                           </th>
+                                           <th>
+                                           变动
+                                           </th>
+                                           </tr>
+                                           </thead>
+                                           <tbody><tr>
+                                           <td>
+                                           {{ ctrl.exchangeRate }}
+                                           </td>
+                                           <td>
+                                           {{ ctrl.exchangeRate }}
+                                           </td>
+                                           <td>
+                                           {{ ctrl.exchangeRate }}
+                                           </td>
+                                           <td>
+                                           {{ ctrl.exchangeRate }}
+                                           </td>
+                                           <td>
+                                           {{ ctrl.exchangeRate }}
+                                           </td>
+                                           <td>
+                                           <span class="bold success">0%</span>
+                                           </td>
+                                           </tr>
+                                           </tbody></table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END PORTLET -->
+                    </div>
+                    <div class="col-md-4">
+                         <!-- BEGIN PORTLET -->
+                        <div class="portlet light ">
+                            <div class="portlet-title">
+                                <div class="caption caption-md">
+                                    <i class="icon-bar-chart theme-font hide"></i>
+                                    <span class="caption-subject font-blue-madison bold uppercase">近七日兑换率</span>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div id="rate" style="height: 165px"></div>
+                            </div>
+                        </div>
+                        <!-- END PORTLET -->
+                    </div>
+            <div class="col-md-4">
+                <div class="row note note-warning ng-scope">
+                    <div class="col-md-12 information">
+                        易物点总量<p>{{ ctrl.user.profile.total_coupon_count }}</p>
+                    </div>
+                    <div class="col-md-12 information">
+                        易物点出售量<p>{{ ctrl.user.profile.sale_coupon_count }}</p>
+                    </div>
+                    <div class="col-md-12 information">
+                        易物点余额<p>{{ ctrl.user.profile.residue_coupon_count }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END PROFILE CONTENT -->
+</div>
+<div class="row">
+    <div class="col-md-8">
+        <table data-ng-table="ctrl.purchase_table" class="table sale_table"
+        rules="row">
+            <tbody>
+            <tr>
+                <th colspan="6" style="text-align: center; font-size: medium">购买点券记录</th>
+            </tr>
+            <tr>
+                <th>参考编号</th>
+                <th>兑换率</th>
+                <th>总额</th>
+                <th>可出售数额</th>
+                <th>创建时间</th>
+                <th>状态</th>
+            </tr>
+            <tr data-ng-repeat="coupon in $data">
+                <td> {{ coupon.purchase_num }} </td>
+                <td> {{ coupon.exchange_rate }} </td>
+                <td> {{ coupon.purchase_count }} </td>
+                <td> {{ coupon.sale_count }} </td>
+                <td> {{ coupon.created_at }} </td>
+                <td>
+                    <button data-ng-if="coupon.can_sale" class="btn btn-sm green-haze filter-submit margin-bottom">可出售</button>
+                    <button data-ng-if="!coupon.can_sale" class="btn btn-sm yellow filter-submit margin-bottom">冻结</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8">
+         <table data-ng-table="ctrl.personal_sale_table" class="table sale_table">
+            <tbody>
+            <tr>
+                <th colspan="5" style="text-align: center; font-size: medium">出售点券记录</th>
+            </tr>
+            <tr>
+                <th>参考编号</th>
+                <th>总额</th>
+                <th>出售兑换率</th>
+                <th>创建时间</th>
+                <th>状态</th>
+            </tr>
+            <tr data-ng-repeat="coupon in $data">
+                <td>{{ coupon.sale_num }}</td>
+                <td> {{ coupon.sell_count }} </td>
+                <td> {{ coupon.exchange_rate }} </td>
+                <td> {{ coupon.created_at }} </td>
+                <td>
+                    <button data-ng-if="coupon.deleted==0" class="btn btn-sm yellow filter-submit margin-bottom">上架中</button>
+                    <button data-ng-if="coupon.deleted!=0" class="btn btn-sm red filter-submit margin-bottom">已出售</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

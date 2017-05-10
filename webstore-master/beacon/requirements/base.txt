@@ -1,0 +1,12 @@
+Django==1.9.7
+MySQL-python==1.2.5
+attrdict>=2.0.0
+djangorestframework==3.3.3
+jsonfield==1.0.3
+pycrypto==2.6.1
+PyJWT==1.4.1
+cryptography==1.4
+requests==2.10.0
+elasticsearch-dsl==5.0.0
+influxdb==3.0.0
+six==1.10.0

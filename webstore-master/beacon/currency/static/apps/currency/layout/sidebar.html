@@ -1,0 +1,105 @@
+<div class="page-sidebar navbar-collapse collapse">
+    <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200"
+        ng-class="{'page-sidebar-menu-closed': settings.layout.pageSidebarClosed}">
+        <!--
+        <li class="heading">
+            <h3 class="uppercase"></h3>
+        </li>
+        -->
+
+        <li class="start active open">
+            <a href="#">
+                <i class=""></i>
+                <span class="title"> 粉丝 </span>
+                <span class="arrow"></span>
+            </a>
+            <ul class="sub-menu" style="display: none;">
+                <li>
+                    <a href="#/home/">
+                        <i class=""></i>
+                        <span class="title"> 首页 </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/information/">
+                        <i class=""></i>
+                        <span class="title"> 账户资料 </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/all-fans/">
+                        <i class=""></i>
+                        <span class="title"> 全体粉丝列表 </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/exchange-rates/">
+                        <i class=""></i>
+                        <span class="title"> 汇率名单 </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+	    <li>
+            <a href="#">
+                <i class=""></i>
+                <span class="title"> 易物点交易管理 </span>
+                <span class="arrow"></span>
+            </a>
+            <ul class="sub-menu" style="display: none;">
+                <li>
+                    <a href="#/create-fans/">
+                        <i class=""></i>
+                        <span class="title"> 新粉丝注册  </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/exchange-rates/">
+                        <i class=""></i>
+                        <span class="title"> 账户升级 </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/exchange-rates/">
+                        <i class=""></i>
+                        <span class="title"> 汇率名单 </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/personal/">
+                        <i class=""></i>
+                        <span class="title"> 易物点管理 </span>
+                    </a>
+                </li>
+                 <li>
+                    <a href="#/purchase-currency/">
+                        <i class=""></i>
+                        <span class="title"> 购买易物点 </span>
+                    </a>
+                </li>
+                 <li>
+                    <a href="#/sale-currency/">
+                        <i class=""></i>
+                        <span class="title"> 出售点管理 </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li data-ng-if="current_user.is_superuser">
+            <a href="#">
+                <i class=""></i>
+                <span class="title"> 高级功能 </span>
+                <span class="arrow"></span>
+            </a>
+            <ul class="sub-menu" style="display: none;">
+                <li>
+                    <a href="#/configuration/">
+                        <i class=""></i>
+                        <span class="title"> 配置参数 </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
